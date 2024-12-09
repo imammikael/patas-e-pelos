@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoção | Patas & Pelos</title>
+    <link rel="icon" href="img/icone.png" type="image/jpeg">
+    <link rel="stylesheet" href="adotar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Para ícones -->
+</head>
+<body>
+
+    <!--Barra de Navegação - começo-->
+    <header class="navbar">
+
+        <a href="index.html">
+            <img src="img/logotipo-barra-navegacao.png" alt="Logotipo" class="logo">
+        </a>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="adotar.html">Adote um Pet</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-icons">
+            <a href="#search" class="icon" id="search-icon"><i class="fas fa-search"></i></a>
+            <input type="text" id="search-bar" class="search-bar" placeholder="Pesquisar...">
+            <a href="login-registro.html" class="icon"><i class="fas fa-user"></i></a>
+            <a href="funcionarios.html" class="icon"><i class="fas fa-briefcase"></i></a>
+        </div>                
+        
+        <script>
+            document.getElementById('search-icon').addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o comportamento padrão do link
+                const searchBar = document.getElementById('search-bar');
+                searchBar.classList.toggle('active'); // Alterna a classe 'active'
+                if (searchBar.classList.contains('active')) {
+                    searchBar.focus(); // Foca na barra de pesquisa quando ativada
+                }
+            });
+        </script>
+
+    </header>
+    <!--Barra de Navegação - final-->
+
+    <!-- Barra de Filtros - começo -->
+    <section class="filter-bar">
+        <form class="filter-form">
+            <input type="text" placeholder="Endereço" name="endereco">
+            <input type="text" placeholder="Cidade" name="cidade">
+            <input type="text" placeholder="CEP" name="cep">
+            <select name="especie">
+                <option value="">Espécie</option>
+                <option value="cachorro">Cachorro</option>
+                <option value="gato">Gato</option>
+                <option value="passaro">Pássaro</option>
+            </select>
+            <select name="genero">
+                <option value="">Gênero</option>
+                <option value="macho">Macho</option>
+                <option value="femea">Fêmea</option>
+            </select>
+            <select name="porte">
+                <option value="">Porte</option>
+                <option value="pequeno">Pequeno</option>
+                <option value="medio">Médio</option>
+                <option value="grande">Grande</option>
+            </select>
+            <input type="text" placeholder="Cor" name="cor">
+            <input type="text" placeholder="Raça" name="raca">
+            <input type="text" placeholder="Idade" name="idade">
+            <button type="submit">Aplicar Filtros</button>
+            <!-- Botão de Limpar Filtros - começo -->
+            <button type="button" id="clear-filters">Limpar</button> <!-- Botão de Limpar -->
+
+            <!-- Botão de Pesquisar animais - começo-->
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Digite raça ou características..." name="search">
+                <button type="button" onclick="searchAnimals()" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <style>
+            .search {
+                display: flex;
+                align-items: center;
+            }
+
+            .search-button {
+                border: none;/* Remove a borda */
+                background: transparent;/* Define o fundo como transparente */
+                cursor: pointer;/* Cursor de ponteiro ao passar sobre o botão */
+                padding: 0;/* Remove o padding */
+                margin-left: 5px;/* Espaçamento entre o input e o botão */
+            }
+
+            .search-button i {
+                font-size: 20px;/* Ajuste o tamanho do ícone conforme necessário */
+                color: #ffffff;/* Altere a cor conforme o seu design */
+            }
+            </style>
+            <!-- Botão de Pesquisar animais - final-->
+
+            <script>
+                function searchAnimals() {
+                const searchInput = document.getElementById('searchInput').value.toLowerCase();
+                const cards = document.querySelectorAll('.animal-cards .card');
+
+                cards.forEach(card => {
+                    const characteristics = card.getAttribute('data-characteristics').toLowerCase();
+                    if (characteristics.includes(searchInput)) {
+                        card.style.display = 'block'; // Mostra o card se corresponder
+                    } else {
+                        card.style.display = 'none'; // Esconde o card se não corresponder
+                    }
+                });
+            }
+
+            // Adiciona um evento de escuta para a tecla Enter
+            document.getElementById('searchInput').addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); // Impede o envio do formulário
+                    searchAnimals(); // Chama a função de pesquisa ao pressionar Enter
+                }
+            });
+            </script>
+
+            <script>
+                document.getElementById('clear-filters').addEventListener('click', function() {
+                    const form = document.querySelector('.filter-form');
+                    form.reset(); // Reseta os campos do formulário
+
+                    // Exibe todos os cards novamente
+                    document.querySelectorAll('.animal-cards .card').forEach(card => {
+                        card.style.display = 'block';
+                    });
+                });
+            </script>
+            <!-- Botão de Limpar Filtros - final -->
+        </form>
+    </section>
+    <!-- Barra de Filtros - final -->
+
+    <!-- Título: Animais para Adoção - começo -->
+    <h1 class="titulo">Animais para Adoção</h1>
+    <style>
+        .titulo{
+            display: flex;
+            justify-content: center;
+            color: rgb(59, 80, 47);
+            margin-top: 15px;
+        }
+    </style>
+    <!-- Título: Animais para Adoção - final     -->
+
+    <!-- Cards dos Animais - começo -->
+    <section class="animal-cards">
+        <div class="card" data-especie="cachorro" data-genero="macho" data-porte="medio" data-cor="cinza" data-raca="pug" data-idade="3 anos" data-characteristics="cachorro cinza pug">
+            <a href="animal-1">
+                <img src="img-adotar-pet/animal-1.jpg" alt="Foto do animal">
+            </a>
+            <h3>Max</h3>
+        </div>
+        <div class="card" data-especie="cachorro" data-genero="femea" data-porte="pequeno" data-cor="preto" data-raca="pinscher" data-idade="2 anos" data-characteristics="pinscher preto">
+            <a href="animal-2">
+                <img src="img-adotar-pet/animal-2.jpg" alt="Foto do animal">
+            </a>
+            <h3>Bella</h3>
+        </div>
+        <div class="card" data-especie="gato" data-genero="femea" data-porte="pequeno" data-cor="cinza" data-raca="gato" data-idade="1 ano" data-characteristics="gato peludo cinza>
+            <a href="animal-3">
+                <img src="img-adotar-pet/animal-3.jpg" alt="Foto do animal">
+            </a>
+            <h3>Lily</h3>
+        </div>
+        <div class="card" data-especie="cachorro" data-genero="macho" data-porte="medio" data-cor="preto" data-raca="doberman" data-idade="1 ano" data-characteristics="doberman filhote">
+            <a href="animal-4">
+                <img src="img-adotar-pet/animal-4.jpg" alt="Foto do animal">
+            </a>
+            <h3>Jack</h3>
+        </div>
+        <div class="card" data-especie="cachorro" data-genero="femea" data-porte="pequeno" data-cor="branco e marrom" data-raca="shih tzu" data-idade="1 ano" data-characteristics="shih tzu marrom pequeno">
+            <a href="animal-5">
+                <img src="img-adotar-pet/animal-5.jpg" alt="Foto do animal">
+            </a>
+            <h3>Rosie</h3>
+        </div>
+        <div class="card" data-especie="cachorro" data-genero="macho" data-porte="médio" data-cor="caramelo" data-raca="vira lata" data-idade="5 anos" data-characteristics="caramelo vira lata marrom dourado medio">
+            <a href="animal-6">
+                <img src="img-adotar-pet/animal-6.jpg" alt="Foto do animal">
+            </a>
+            <h3>Bailey</h3>
+        </div>
+        <div class="card" data-especie="passaro" data-genero="macho" data-porte="pequeno" data-cor="cinza" data-raca="canarinho" data-idade="1 ano" data-characteristics="passaro canarinho cinza e preto pequeno">
+            <a href="animal-7">
+                <img src="img-adotar-pet/animal-7.jpg" alt="Foto do animal">
+            </a>
+            <h3>Canela</h3>
+        </div>
+        <div class="card" data-especie="gato" data-genero="femea" data-porte="pequeno" data-cor="marrom" data-raca="gato" data-idade="2 anos" data-characteristics="gato marrom e cinza femea">
+            <a href="animal-8">
+                <img src="img-adotar-pet/animal-8.jpg" alt="Foto do animal">
+            </a>
+            <h3>Pitty</h3>
+        </div>
+        <div class="card" data-especie="gato" data-genero="macho" data-porte="pequeno" data-cor="cinza" data-raca="gato" data-idade="1 ano" data-characteristics="gato peludo cinza e branco macho">
+            <a href="animal-9">
+                <img src="img-adotar-pet/animal-9.jpg" alt="Foto do animal">
+            </a>
+            <h3>Whisky</h3>
+        </div>
+        <div class="card" data-especie="gato" data-genero="macho" data-porte="pequeno" data-cor="laranja" data-raca="gato" data-idade="1 ano" data-characteristics="gato laranja macho">
+            <a href="animal-10">
+                <img src="img-adotar-pet/animal-10.jpg" alt="Foto do animal">
+            </a>
+            <h3>Garfield</h3>
+        </div>
+        <div class="card" data-especie="passaro" data-genero="macho" data-porte="pequeno" data-cor="amarelo cinza branco" data-raca="calopsita" data-idade="1 ano" data-characteristics="canarinho branco cinza amarelo calopsita">
+            <a href="animal-11">
+                <img src="img-adotar-pet/animal-11.jpg" alt="Foto do animal">
+            </a>
+            <h3>Tico</h3>
+        </div>
+        <div class="card" data-especie="cachorro" data-genero="macho" data-porte="medio" data-cor="marrom" data-raca="buldogue" data-idade="1 ano" data-characteristics="buldogue marrom medio macho branco">
+            <a href="animal-12">
+                <img src="img-adotar-pet/animal-12.jpg" alt="Foto do animal">
+            </a>
+            <h3>Piper</h3>
+        </div>
+        <div class="card" data-especie="cachorro" data-genero="macho" data-porte="pequeno" data-cor="preto" data-raca="cane corso" data-idade="1 ano" data-characteristics="cane corso filhote preto pequeno">
+            <a href="animal-13">
+                <img src="img-adotar-pet/animal-13.jpg" alt="Foto do animal">
+            </a>
+            <h3>Thor</h3>
+        </div>
+        <div class="card" data-especie="cachorro" data-genero="macho" data-porte="pequeno" data-cor="preto cinza" data-raca="pitbull" data-idade="1 ano" data-characteristics="pitbull filhote pequeno branco cinza preto">
+            <a href="animal-14">
+                <img src="img-adotar-pet/animal-14.jpg" alt="Foto do animal">
+            </a>
+            <h3>Odin</h3>
+        </div>
+        <div class="card" data-especie="cachorro" data-genero="femea" data-porte="pequeno" data-cor="dourado" data-raca="golden retriever" data-idade="1 ano" data-characteristics="cachorro golden dourado femea pequeno filhote">
+            <a href="animal-15">
+                <img src="img-adotar-pet/animal-15.jpg" alt="Foto do animal">
+            </a>
+            <h3>Daisy</h3>
+        </div>
+        <div class="card" data-especie="cachorro" data-genero="macho" data-porte="pequeno" data-cor="branco" data-raca="poodle" data-idade="1 ano" data-characteristics="cachorro branco poodle pequeno macho">
+            <a href="animal-16">
+                <img src="img-adotar-pet/animal-16.jpg" alt="Foto do animal">
+            </a>
+            <h3>Oliver</h3>
+        </div>
+        <div class="card" data-especie="cachorro" data-genero="macho" data-porte="medio" data-cor="marrom" data-raca="fila brasileiro" data-idade="1 ano" data-characteristics="fila brasileiro marrom filhote medio cachorro macho">
+            <a href="animal-17">
+                <img src="img-adotar-pet/animal-17.jpg" alt="Foto do animal">
+            </a>
+            <h3>Thorin</h3>
+        </div>
+        <div class="card" data-especie="cachorro" data-genero="macho" data-porte="pequeno" data-cor="branco" data-raca="dogo argentino" data-idade="1 ano" data-characteristics="dogo argentino branco filhote pequeno cachorro macho">
+            <a href="animal-18">
+                <img src="img-adotar-pet/animal-18.jpg" alt="Foto do animal">
+            </a>
+            <h3>Toby</h3>
+        </div>
+        <!-- Adicione mais cards conforme necessário -->
+    </section>
+    <!-- Cards dos Animais - final -->
+
+    <footer>
+        <p>&copy; 2024 Patas & Pelos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link para o arquivo JavaScript -->
+</body>
+</html>

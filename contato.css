@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Barra de Navegação - começo */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaço entre logotipo, links e ícones */
+    background-color: rgb(59, 80, 47);
+    padding: 10px 20px;
+}
+
+.logo {
+    width: 50px; /* Ajuste o tamanho do logotipo conforme necessário */
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centraliza os links */
+    flex-grow: 1; /* Permite que a lista de links ocupe o espaço disponível */
+}
+
+.nav-links li {
+    margin: 0 15px; /* Espaço entre os links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f0a500;
+}
+
+.nav-icons .icon {
+    color: white;
+    font-size: 20px;
+    margin-left: 20px; /* Espaço entre os ícones */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-icons .icon:hover {
+    color: #f0a500; /* Cor ao passar o mouse */
+}
+
+.search-bar {
+    position: absolute; /* Para posicionar a barra de pesquisa em relação à lupa */
+    left: -220px; /* Posição inicial fora da tela, à esquerda da lupa */
+    width: 200px; /* Largura da barra de pesquisa */
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    transition: left 0.3s ease, opacity 0.3s ease; /* Transição suave para a posição e opacidade */
+    opacity: 0; /* Inicialmente invisível */
+}
+
+.search-bar.active {
+    left: 1015px; /* Posição final, próxima à lupa */
+    opacity: 1; /* Torna visível */
+    top: 30px;
+}
+
+#employee-icon {
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+#employee-icon:hover {
+    color: #f0a500; /* Cor de destaque ao passar o mouse */
+}
+/* Barra de Navegação - final */
+
+/* Reseta o estilo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cabeçalho */
+header {
+    background: #ff9b6a;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+header .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+header .nav-links li {
+    margin-left: 20px;
+}
+
+header .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+}
+
+header .nav-links a.active {
+    text-decoration: underline;
+}
+
+/* Seção de contato */
+.contato {
+    padding: 20px;
+    max-width: 600px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contato h1 {
+    color: #ff9b6a;
+    margin-bottom: 15px;
+}
+
+.contato p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Formulário */
+.form-contato label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-contato input,
+.form-contato textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-contato button {
+    background: #ff9b6a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-contato button:hover {
+    background: rgb(59, 80, 47);
+}
+
+/* Seção de Links de contatos - começo */
+
+.titulo-omc {
+    color: rgb(59, 80, 47);
+    margin-left: 10px;
+}
+
+.paragrafo-pos-omc {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.contatos-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contato-link {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease;
+}
+
+.contato-link i {
+    font-size: 1.2em;
+}
+
+/* WhatsApp */
+.contato-link.whatsapp {
+    background: #25d366; /* Cor oficial do WhatsApp */
+}
+
+.contato-link.whatsapp:hover {
+    background: #1bc755;
+}
+
+/* Instagram */
+.contato-link.instagram {
+    background: #e4405f; /* Cor oficial do Instagram */
+}
+
+.contato-link.instagram:hover {
+    background: #d82e4a;
+}
+
+/* E-mail */
+.contato-link.email {
+    background: #0072c6; /* Azul para e-mail */
+}
+
+.contato-link.email:hover {
+    background: #005fa3;
+}
+/* Seção de Links de contatos - final */
+
+/*Rodapé - começo */
+footer {
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgb(59, 80, 47);
+    color: white;
+}
+/*Rodapé - final */

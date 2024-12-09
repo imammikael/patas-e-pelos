@@ -1,0 +1,41 @@
+.funcionarios-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.perfil-funcionarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.funcionario-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 250px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.funcionario-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.editar-perfil {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.editar-perfil:hover {
+    background-color: #e65a50;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Patas & Pelos</title>
+    <link rel="icon" href="img/icone.png" type="image/jpeg">
+    <link rel="stylesheet" href="contato.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Para ícones -->
+</head>
+<body>
+
+    <!--Barra de Navegação - começo-->
+    <header class="navbar">
+
+        <a href="index.html">
+            <img src="img/logotipo-barra-navegacao.png" alt="Logotipo" class="logo">
+        </a>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="adotar.html">Adote um Pet</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-icons">
+            <a href="#search" class="icon" id="search-icon"><i class="fas fa-search"></i></a>
+            <input type="text" id="search-bar" class="search-bar" placeholder="Pesquisar...">
+            <a href="login-registro.html" class="icon"><i class="fas fa-user"></i></a>
+            <a href="funcionarios.html" class="icon"><i class="fas fa-briefcase"></i></a>
+        </div>                
+        
+        <script>
+            document.getElementById('search-icon').addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o comportamento padrão do link
+                const searchBar = document.getElementById('search-bar');
+                searchBar.classList.toggle('active'); // Alterna a classe 'active'
+                if (searchBar.classList.contains('active')) {
+                    searchBar.focus(); // Foca na barra de pesquisa quando ativada
+                }
+            });
+        </script>
+
+    </header>
+    <!--Barra de Navegação - final-->
+
+    <main>
+        <section class="contato">
+            <h1>Entre em Contato</h1>
+            <p>Tem alguma dúvida ou precisa de ajuda? Preencha o formulário abaixo ou entre em contato por nossas redes sociais!</p>
+            
+            <form class="form-contato" action="#" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <section class="links-contato">
+        <h2 class="titulo-omc">Outros meios de contato</h2>
+        <p class="paragrafo-pos-omc">Entre em contato pelas nossas redes sociais ou diretamente pelo WhatsApp!</p>
+        <div class="contatos-links">
+            <a href="https://wa.me/seunumero" target="_blank" class="contato-link whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://instagram.com/seuusuario" target="_blank" class="contato-link instagram">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="mailto:seuemail@example.com" target="_blank" class="contato-link email">
+                <i class="fas fa-envelope"></i> E-mail
+            </a>
+        </div>
+    </section>    
+
+    <footer>
+        <p>&copy; 2024 Patas & Pelos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="contato.js"></script> <!-- Link para o arquivo JavaScript -->
+</body>
+</html>

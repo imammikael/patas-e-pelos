@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços | Patas & Pelos</title>
+    <link rel="icon" href="img/icone.png" type="image/jpeg">
+    <link rel="stylesheet" href="servicos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Para ícones -->
+</head>
+<body>
+
+    <!--Barra de Navegação - começo-->
+    <header class="navbar">
+
+        <a href="index.html">
+            <img src="img/logotipo-barra-navegacao.png" alt="Logotipo" class="logo">
+        </a>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="adotar.html">Adote um Pet</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-icons">
+            <a href="#search" class="icon" id="search-icon"><i class="fas fa-search"></i></a>
+            <input type="text" id="search-bar" class="search-bar" placeholder="Pesquisar...">
+            <a href="login-registro.html" class="icon"><i class="fas fa-user"></i></a>
+            <a href="funcionarios.html" class="icon"><i class="fas fa-briefcase"></i></a>
+        </div>                
+        
+        <script>
+            document.getElementById('search-icon').addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o comportamento padrão do link
+                const searchBar = document.getElementById('search-bar');
+                searchBar.classList.toggle('active'); // Alterna a classe 'active'
+                if (searchBar.classList.contains('active')) {
+                    searchBar.focus(); // Foca na barra de pesquisa quando ativada
+                }
+            });
+        </script>
+
+    </header>
+    <!--Barra de Navegação - final-->
+
+    <h1 class="titulo-ns">Nossos Serviços</h1>
+
+    <p class="paragrafo">Na Patas & Pelos, oferecemos uma série de serviços para cuidar do bem-estar do seu pet e garantir que ele tenha tudo o que precisa.
+                        Desde orientação e suporte no processo de adoção até uma ampla variedade de produtos de alta qualidade, estamos aqui para ajudar a
+                        proporcionar uma vida saudável e feliz para o seu amigo de quatro patas. Contamos com atendimento especializado para esclarecer dúvidas
+                        sobre alimentação, cuidados essenciais e produtos específicos para cada necessidade. Na Patas & Pelos, o compromisso é com a saúde e o
+                        conforto dos pets e a tranquilidade dos seus tutores.
+    </p>
+
+    <div class="carrossel-container">
+        <button class="carrossel-button left" onclick="slideLeft()">❮</button>
+        <div class="carrossel">
+            <div class="carrossel-track">
+                <div class="card">
+                    <img src="img-servicos/card-1-carrossel.jpg" alt="Card 1">
+                    Banho
+                </div>
+                <div class="card">
+                    <img src="img-servicos/card-2-carrossel.jpg" alt="Card 2">
+                    Tosa
+                </div>
+                <div class="card">
+                    <img src="img-servicos/card-3-carrossel.jpg" alt="Card 3">
+                    Limpeza de Orelhas
+                </div>
+                <div class="card">
+                    <img src="img-servicos/card-4-carrossel.jpg" alt="Card 4">
+                    Cuidados Veterinários
+                </div>
+                <div class="card">
+                    <img src="img-servicos/card-5-carrossel.jpg" alt="Card 5">
+                    Passeios Personalizados
+                </div>
+                <div class="card">
+                    <img src="img-servicos/card-6-carrossel.jpg" alt="Card 6">
+                    Treinamento Básico
+                </div>
+            </div>
+        </div>
+        <button class="carrossel-button right" onclick="slideRight()">❯</button>
+        <div class="carrossel-dots">
+            <span class="dot" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+        </div>
+    </div>
+    
+    <div class="agradecimento-container">
+        <h2 class="agradecimento-titulo">Agradecimento Especial</h2>
+        <img src="img-servicos/logotipo-soluciona-web.png" alt="Logotipo da Soluciona Web" class="agradecimento-logo">
+        <p class="agradecimento-texto">
+            A equipe da <strong>Patas & Pelos</strong> gostaria de expressar um sincero agradecimento à empresa 
+            <strong>Soluciona Web</strong>, que foi fundamental para a criação do nosso site. 
+            Com dedicação e expertise, eles transformaram nossa visão em realidade, permitindo que nossa 
+            presença online refletisse nosso compromisso com os pets e seus tutores. Obrigado por essa parceria de sucesso!
+        </p>
+    </div>       
+
+    <footer>
+        <p>&copy; 2024 Patas & Pelos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="servicos.js"></script>
+
+</body>
+</html>

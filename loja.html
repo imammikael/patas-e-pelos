@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja | Patas & Pelos</title>
+    <link rel="icon" href="img/icone.png" type="image/jpeg">
+    <link rel="stylesheet" href="loja.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Para ícones -->
+</head>
+<body>
+
+    <!--Barra de Navegação - começo-->
+    <header class="navbar">
+
+        <a href="index.html">
+            <img src="img/logotipo-barra-navegacao.png" alt="Logotipo" class="logo">
+        </a>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="adotar.html">Adote um Pet</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-icons">
+            <a href="#search" class="icon" id="search-icon"><i class="fas fa-search"></i></a>
+            <input type="text" id="search-bar" class="search-bar" placeholder="Pesquisar...">
+            <a href="login-registro.html" class="icon"><i class="fas fa-user"></i></a>
+            <a href="funcionarios.html" class="icon"><i class="fas fa-briefcase"></i></a>
+        </div>                
+        
+        <script>
+            document.getElementById('search-icon').addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o comportamento padrão do link
+                const searchBar = document.getElementById('search-bar');
+                searchBar.classList.toggle('active'); // Alterna a classe 'active'
+                if (searchBar.classList.contains('active')) {
+                    searchBar.focus(); // Foca na barra de pesquisa quando ativada
+                }
+            });
+        </script>
+
+    </header>
+    <!--Barra de Navegação - final-->
+
+    <!-- Barra de Filtros - começo -->
+    <section class="filter-bar">
+        <form class="filter-form">
+            <div class="filter-group">
+                <select name="categoria" id="categoria-filtro" onchange="atualizarSubcategoria()">
+                    <option value="">Selecione</option>
+                    <option value="racao-cachorro">Ração para Cachorro</option>
+                    <option value="racao-gato">Ração para Gato</option>
+                    <option value="comida-passaro">Comida para Pássaro</option>
+                    <option value="gaiola-passaro">Gaiola para Pássaro</option>
+                    <option value="pote-racao">Pote de Ração</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <select name="marca" id="marca-filtro">
+                    <option value="">Selecione</option>
+                </select>
+            </div>
+            <div class="filter-buttons">
+                <button type="button" onclick="filtrarProdutos()">Aplicar Filtros</button>
+                <button type="button" onclick="limparFiltros()">Limpar Filtros</button>
+            </div>
+        </form>
+    </section>    
+    <!-- Barra de Filtros - final -->
+
+    <!-- Título: Produtos à Venda - começo -->
+    <h1 class="titulo">Produtos à Venda</h1>
+    <style>
+        .titulo{
+            display: flex;
+            justify-content: center;
+            color: rgb(59, 80, 47);
+            margin-top: 15px;
+        }
+    </style>
+    <!-- Título: Produtos à Venda - final -->
+
+    <!-- Cards de Produtos -->
+    <section class="produto-cards">
+
+        <a href="produto-1-loja.html" class="card-link">
+            <div class="card" data-categoria="racao-cachorro" data-marca="royal canin">
+                <img src="img-loja/produto-1.webp" alt="Card-1">
+                <h3>Ração para Cachorro</h3>
+            </div>
+        </a>
+
+        <a href="produto-2-loja.html" class="card-link">
+            <div class="card" data-categoria="racao-cachorro" data-marca="royal canin">
+                <img src="img-loja/produto-2.webp" alt="Card-2">
+                <h3>Ração para Cachorro</h3>
+            </div>
+        </a>
+
+        <a href="produto-3-loja.html" class="card-link">
+            <div class="card" data-categoria="racao-cachorro" data-marca="premier pet">
+                <img src="img-loja/produto-3.webp" alt="Card-3">
+                <h3>Ração para Cachorro</h3>
+            </div>
+        </a>
+
+        <a href="produto-4-loja.html" class="card-link">
+            <div class="card" data-categoria="racao-cachorro" data-marca="premier pet">
+                <img src="img-loja/produto-4.webp" alt="Card-4">
+                <h3>Ração para Cachorro</h3>
+            </div>
+        </a>
+
+        <a href="produto-5-loja.html" class="card-link">
+            <div class="card" data-categoria="racao-cachorro" data-marca="hills science diet">
+                <img src="img-loja/produto-5.jpg" alt="Card-5">
+                <h3>Ração para Cachorro</h3>
+            </div>
+        </a>
+
+        <a href="produto-6-loja.html" class="card-link">
+            <div class="card" data-categoria="racao-cachorro" data-marca="hills science diet">
+                <img src="img-loja/produto-6.webp" alt="Card-6">
+                <h3>Ração para Cachorro</h3>
+            </div>
+        </a>
+
+        <a href="produto-7-loja.html" class="card-link">
+            <div class="card" data-categoria="gaiola-passaro">
+                <img src="img-loja/produto-7.jpg" alt="Card-7">
+                <h3>Gaiola para Pássaro</h3>
+            </div>
+        </a>
+
+        <a href="produto-8-loja.html" class="card-link">
+            <div class="card" data-categoria="racao-gato" data-marca="whiskas">
+                <img src="img-loja/produto-8.jpg" alt="Card-8">
+                <h3>Ração para Gato</h3>
+            </div>
+        </a>
+
+        <a href="produto-9-loja.html" class="card-link">
+            <div class="card" data-categoria="pote-racao">
+                <img src="img-loja/produto-9.jpg" alt="Card-9">
+                <h3>Pote de Ração</h3>
+            </div>
+        </a>
+
+        <a href="produto-10-loja.html" class="card-link">
+            <div class="card" data-categoria="comida-passaro" data-marca="alcon club">
+                <img src="img-loja/produto-10.jpg" alt="Card-10">
+                <h3>Comida para Pássaro</h3>
+            </div>
+        </a>
+
+        <a href="produto-11-loja.html" class="card-link">
+            <div class="card" data-categoria="comida-passaro" data-marca="nutropica">
+                <img src="img-loja/produto-11.jpg" alt="Card-11">
+                <h3>Comida para Pássaro</h3>
+            </div>
+        </a>
+
+        <a href="produto-12-loja.html" class="card-link">
+            <div class="card" data-categoria="racao-cachorro" data-marca="golden">
+                <img src="img-loja/produto-12.jpg" alt="Card-12">
+                <h3>Ração para Cachorro</h3>
+            </div>
+        </a>
+
+        <a href="produto-13-loja.html" class="card-link">
+            <div class="card" data-categoria="pote-racao">
+                <img src="img-loja/produto-13.jpg" alt="Card-13">
+                <h3>Pote de Ração</h3>
+            </div>
+        </a>
+            
+        <a href="produto-14-loja.html" class="card-link">
+            <div class="card" data-categoria="pote-racao">
+                <img src="img-loja/produto-14.jpg" alt="Card-14">
+                <h3>Pote de Ração</h3>
+            </div>
+        </a>
+
+        <a href="produto-15-loja.html" class="card-link">
+            <div class="card" data-categoria="pote-racao">
+                <img src="img-loja/produto-15.jpg" alt="Card-15">
+                <h3>Pote de Ração</h3>
+            </div>
+        </a>
+
+        <a href="produto-16-loja.html" class="card-link">
+            <div class="card" data-categoria="gaiola-passaro">
+                <img src="img-loja/produto-16.jpg" alt="Card-16">
+                <h3>Gaiola para Pássaro</h3>
+            </div>
+        </a>
+
+        <a href="produto-17-loja.html" class="card-link">
+            <div class="card" data-categoria="comida-cachorro" data-marca="royal canin">
+                <img src="img-loja/produto-17.jpg" alt="Card-17">
+                <h3>Ração para Gato</h3>
+            </div>
+        </a>
+
+        <a href="produto-18-loja.html" class="card-link">
+            <div class="card" data-categoria="comida-passaro" data-marca="megazoo">
+                <img src="img-loja/produto-18.jpg" alt="Card-18">
+                <h3>Comida para Pássaro</h3>
+            </div>
+        </a>
+
+    </section>
+
+    <!--Rodapé - começo-->
+    <footer>
+        <p>&copy; 2024 Patas & Pelos. Todos os direitos reservados.</p>
+    </footer>
+    <!--Rodapé - final-->
+
+    <div>
+        <?php include 'produtos.php'; ?>
+    </div>    
+
+    <script src="loja.js"></script>
+</body>
+</html>

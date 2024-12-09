@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Impede a rolagem */
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.banner {
+    width: 75%; /* O espaço restante é ocupado pela imagem */
+    height: 100%;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha a área sem distorção */
+}
+
+.sidebar {
+    width: 25%; /* Espaço para o formulário de login/cadastro */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para o container */
+.login-register-container {
+    width: 80%; /* Define a largura do formulário dentro da sidebar */
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #f3f6e4; /* Cor de fundo clara */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Formulário e botões */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-toggle {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.form-toggle button {
+    width: 100%;
+    padding: 0.5rem;
+    cursor: pointer;
+    border: none;
+    background-color: #f3f6e4;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+.form-toggle .active {
+    color: #ffffff;
+    background-color: rgb(59, 80, 47);
+    border-radius: 3px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Campos de entrada */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e4e4e4;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: rgb(59, 80, 47); /* Verde escuro */
+    border-radius: 3px;
+    color: white;
+    padding: 0.75rem;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #1a402a; /* Verde mais escuro */
+}
+
+/* Estilos para o login com redes sociais */
+.social-text {
+    margin-top: 1rem;
+    color: #666;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: rgb(59, 80, 47);
+} 

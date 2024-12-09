@@ -1,0 +1,96 @@
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    /* Barra de Navegação */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-icons {
+        display: none; /* Esconde os ícones de pesquisa e login em telas menores */
+    }
+
+    /* Banner */
+    .banner-img {
+        height: 300px;
+    }
+
+    .banner-text h1 {
+        font-size: 2rem;
+    }
+
+    .banner-text p {
+        font-size: 1rem;
+    }
+
+    /* Cards de Destaques */
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    /* Testemunhos */
+    .testemunhos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Como Funciona */
+    .etapas {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .etapa {
+        width: 90%;
+    }
+}
+
+/* Responsividade para dispositivos móveis muito pequenos */
+@media (max-width: 480px) {
+    /* Barra de Pesquisa */
+    .search-bar {
+        width: 100%; /* Ocupa toda a largura disponível */
+        left: 0; /* Coloca a barra de pesquisa mais acessível */
+    }
+
+    .banner-img {
+        height: 250px;
+    }
+
+    .banner-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner-text p {
+        font-size: 0.9rem;
+    }
+
+    /* Cards de Destaques */
+    .card {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Ícones de Navegação */
+    .nav-icons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+}

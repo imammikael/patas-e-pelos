@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patas & Pelos</title>
+    <link rel="icon" href="img/icone.png" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index-responsividade.css">
+</head>
+<body>
+
+    <!--Barra de Navegação - começo-->
+    <header class="navbar">
+
+        <a href="index.html">
+            <img src="img/logotipo-barra-navegacao.png" alt="Logotipo" class="logo">
+        </a>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="adotar.html">Adote um Pet</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-icons">
+            <a href="#search" class="icon" id="search-icon"><i class="fas fa-search"></i></a>
+            <input type="text" id="search-bar" class="search-bar" placeholder="Pesquisar...">
+            <a href="login-registro.html" class="icon"><i class="fas fa-user"></i></a>
+            <a href="funcionarios.html" class="icon"><i class="fas fa-briefcase"></i></a>
+        </div>                
+        
+        <script>
+            document.getElementById('search-icon').addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o comportamento padrão do link
+                const searchBar = document.getElementById('search-bar');
+                searchBar.classList.toggle('active'); // Alterna a classe 'active'
+                if (searchBar.classList.contains('active')) {
+                    searchBar.focus(); // Foca na barra de pesquisa quando ativada
+                }
+            });
+        </script>
+
+    </header>
+    <!--Barra de Navegação - final-->
+
+    <!-- Imagem do Banner - começo -->
+    <div class="banner-container">
+        <img src="./img/banner.avif" alt="Adote um Pet" class="banner-img">
+        <div class="banner-text">
+            <h1>Bem-vindo(a) ao Patas & Pelos</h1>
+            <p>Aqui você encontra amigos de 4 patas e tudo para cuidar deles!</p>
+        </div>
+    </div>
+
+    <!-- Adicionando o título "Seções" sobre o banner - começo -->
+    <div class="secoes-dropdown">
+        <span class="secoes-title">Seções <i class="fas fa-chevron-down"></i></span>
+        <ul class="secoes-list">
+            <li><a href="#destaques">Destaques</a></li>
+            <li><a href="#testemunhos">Testemunhos</a></li>
+            <li><a href="#como-funciona">Como Funciona</a></li>
+            <li><a href="#benefits">Benefícios</a></li>
+            <li><a href="#contato-rapido">Contato</a></li>
+        </ul>
+    </div>
+    <!-- Adicionando o título "Seções" sobre o banner - final -->
+    <!-- Imagem do Banner - final -->
+
+    <!-- Seções de Destaque - começo -->
+    <main>
+        <section class="destaques">
+            <h2>O que oferecemos?</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./img/racao.webp" alt="Ração">
+                    <h3>Ração de Qualidade</h3>
+                    <p>Rações para cães, gatos e pássaros com os melhores nutrientes.</p>
+                </div>
+                <div class="card">
+                    <img src="./img/adocao.jpg" alt="Adote">
+                    <h3>Adote um Amigo</h3>
+                    <p>Dê um lar cheio de amor para nossos pets disponíveis para adoção.</p>
+                </div>
+                <div class="card">
+                    <img src="./img/acessorio.jpg" alt="Acessórios">
+                    <h3>Acessórios</h3>
+                    <p>Potes de ração e gaiolas de pássaros para cuidar bem dos seus pets.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Seções de Destaque - final -->
+
+    <!--Seção de Testemunhos - começo-->
+    <section class="testemunhos">
+        <h2 class="titulo-oqncd">O Que Nossos Clientes Dizem</h2>
+        <div class="testemunhos-container">
+
+            <div class="testemunho">
+                <div class="usuario">
+                    <div class="avatar">M</div>
+                    <div class="nome">Maria S.</div>
+                </div>
+                <div class="comentario">
+                    <p>"Excelente atendimento e produtos de qualidade! Recomendo a todos!"</p>
+                </div>
+                <div class="avaliacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                </div>
+            </div>
+
+            <div class="testemunho">
+                <div class="usuario">
+                    <div class="avatar">J</div>
+                    <div class="nome">João P.</div>
+                </div>
+                <div class="comentario">
+                    <p>"Meu gato amou a ração! Muito bom o atendimento e a entrega." </p>
+                </div>
+                <div class="avaliacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                </div>
+            </div>
+
+            <div class="testemunho">
+                <div class="usuario">
+                    <div class="avatar">C</div>
+                    <div class="nome">Carlos S.</div>
+                </div>
+                <div class="comentario">
+                    <p>"Adotei meu cachorro aqui e foi uma experiência maravilhosa! Eles realmente se preocupam com o bem-estar dos animais. Super recomendo!" </p>
+                </div>
+                <div class="avaliacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                </div>
+            </div>
+
+            <div class="testemunho">
+                <div class="usuario">
+                    <div class="avatar">F</div>
+                    <div class="nome">Fernanda L.</div>
+                </div>
+                <div class="comentario">
+                    <p>"A compra do pote de ração foi super tranquila, e o envio foi rápido. Meu gato adorou! Com certeza voltarei a comprar." </p>
+                </div>
+                <div class="avaliacao">
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                    <span class="estrela">&#9733;</span>
+                </div>
+            </div>
+
+        </div>
+    </section>    
+    <!--Seção de Testemunhos - final-->
+    
+    <!--Como Funciona - começo-->
+    <section id="como-funciona">
+        <h2 class="h2-como-funciona">Como Funciona?</h2>
+        <p>Adote ou compre com facilidade. Siga os passos abaixo para começar!</p>
+      
+        <div class="etapas">
+          <div class="etapa">
+            <img src="./img/escolher.jpg" alt="Escolher pet ou produto">
+            <h3>1. Escolha seu Pet ou Produto</h3>
+            <p>Navegue pelas opções disponíveis e escolha o que mais lhe agradar.</p>
+          </div>
+      
+          <div class="etapa">
+            <img src="./img/carrinho-de-compras-online.png" alt="Preencher formulário">
+            <h3>2. Preencha o Formulário ou Adicione ao Carrinho</h3>
+            <p>Para adoção, preencha o formulário necessário. Para compras, adicione ao carrinho.</p>
+          </div>
+      
+          <div class="etapa">
+            <img src="./img/pagamento.png" alt="Pagamento">
+            <h3>3. Finalize a Compra ou Adote</h3>
+            <p>Complete seu pagamento ou envie sua solicitação de adoção.</p>
+          </div>
+      
+          <div class="etapa">
+            <img src="./img/entrega.png" alt="Receba seu pedido">
+            <h3>4. Receba o Produto ou Confirmação de Adoção</h3>
+            <p>Seu pedido será entregue, ou sua adoção será confirmada.</p>
+          </div>
+        </div>
+      
+        <a href="pagina-adocao.html" class="cta-btn">Adote Já ou Compre Agora</a>
+      </section>
+      <!--Como Funciona - final-->
+
+      <!--Seção de Benefícios - começo-->
+      <section class="benefits">
+        <div class="container">
+          <h2>Adotar é um Ato de Amor</h2>
+          <p>Adotar um pet é um gesto de carinho que muda vidas. Não só a vida do animal, que ganha uma nova chance, mas também a sua, que recebe a companhia leal de um amigo que vai trazer muita alegria. Ao adotar, você contribui para a redução da população de animais abandonados, e oferece um lar acolhedor para aqueles que mais precisam.</p>
+          <ul>
+            <li><strong>Reduza o abandono de animais:</strong> Cada adoção é um passo para diminuir o número de pets em abrigos e nas ruas.</li>
+            <li><strong>Companheirismo sem igual:</strong> A conexão entre você e um pet adotado pode ser imensurável, com amor incondicional e amizade verdadeira.</li>
+            <li><strong>Custo-benefício:</strong> Muitas vezes, os animais para adoção já estão castrados, vacinados e vermifugados, o que reduz gastos iniciais com cuidados médicos.</li>
+          </ul>
+        </div>
+        <div class="container">
+          <h2>Produtos para a Felicidade do Seu Pet</h2>
+          <p>Nossos produtos são pensados para garantir que seu pet tenha uma vida plena, saudável e feliz. Trabalhamos com as melhores marcas e uma seleção de itens para todas as necessidades do seu amigo de quatro patas, seja alimentação, acessórios, brinquedos ou cuidados.</p>
+          <ul>
+            <li><strong>Alimentos de Qualidade:</strong> Oferecemos rações premium e especializadas para atender a todas as necessidades nutricionais do seu pet.</li>
+            <li><strong>Acessórios para Conforto:</strong> Camas, roupinhas, e tapetes, tudo com muito carinho e conforto para seu pet se sentir em casa.</li>
+            <li><strong>Saúde e Bem-Estar:</strong> Produtos de higiene, cuidados com o pelo e artigos que garantem a saúde do seu pet.</li>
+          </ul>
+        </div>
+      </section>
+      <!--Seção de Benefícios - final-->
+      
+      <!--Contato Rápido - começo-->
+      <section class="contato-rapido">
+        <h2>Fale Conosco</h2>
+        <p>Tem alguma dúvida? Entre em contato com a gente rapidamente!</p>
+        <a href="contato.html" class="cta-btn">Falar com o Suporte</a>
+    </section>
+    <!--Contato Rápido - final-->
+
+    <!--Rodapé - começo-->
+    <footer>
+        <p>&copy; 2024 Patas & Pelos. Todos os direitos reservados.</p>
+    </footer>
+    <!--Rodapé - final-->
+
+    <script src="script.js"></script>
+</body>
+</html>
